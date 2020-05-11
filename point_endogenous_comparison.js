@@ -12,6 +12,7 @@ var points = [] // Point mutant identities
 var colors = [] // Color for each point mutant
 var alphas = [] // Alpha for each point mutant
 
+
 // Iterate through each point mutant in the sequence source
 for (var i = 0; i < seq_source.data['mutant'].length ; i++) {
     // Define the endogenous mutant examined

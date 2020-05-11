@@ -37,7 +37,8 @@ nt_idx = vdj.io.nucleotide_idx()
 
 # Generate an empty dataframe and a color list from 5' to 3'
 mut_df = pd.DataFrame([])
-colors = bokeh.palettes.Category10_10
+# colors = bokeh.palettes.Category10_10
+colors = bokeh.palettes.Viridis10
 for key, val in endog_seqs.items():
     color_idx = 0   
     for i, b in enumerate(reference[1]):
@@ -173,7 +174,7 @@ for source in [dwell_all_data, dwell_cut_data, dwell_unloop_data]:
         _df['point_y'] = point_y
         _df['mutant'] = g
         _df['color'] = 'slategrey'
-        _df['alpha'] = 1;
+        _df['alpha'] = 1
         _df['level'] = 'underlay'
         if ('Spac' in g) | ('Hept' in g) | ('Non' in g):
             _df['class'] = 'point'
@@ -249,9 +250,10 @@ seq_ax = bokeh.plotting.figure(width=600, height=50, x_range=[0, 30],
                                 y_range=[-0.01, 0.1], tools=[''],
                                 toolbar_location=None)
 dwell_all_ax = bokeh.plotting.figure(width=275, height=250, x_axis_type='log', 
-                                    x_range=[0.5, 80], y_range=[-0.05, 1.05],
+                                    x_range=[0.5, 80], 
                                     x_axis_label='paired complex dwell time [min]',
                                     y_axis_label = 'ECDF', title='all PCs',
+                                    y_range=[0, 1],
                                     tools=[''])
 dwell_unloop_ax = bokeh.plotting.figure(width=275, height=250, x_axis_type='log', 
                                     x_range=[0.5, 80], y_range=[0, 1],
@@ -314,7 +316,7 @@ bar_ax.add_layout(bar)
 
 # Add the variant sequences
 variant_seq = bokeh.models.glyphs.Text(x='position', y=0, text='base',
-text_color='color', text_font='Courier', text_font_size='26pt')
+                text_color='color', text_font='Courier', text_font_size='26pt')
 sequence = seq_ax.add_glyph(seq_source, variant_seq, view=seq_view)
 
 # Assemble the percentiles
@@ -443,7 +445,7 @@ sel.js_on_change('value', js_cbs[0])
 
 spacer = Div(text='<br/>')
 sel_row = bokeh.layouts.row(sel, bar_ax)
-sel_col = bokeh.layouts.column(sel_row, seq_ax) # , sizing_mode='scale_width')
+sel_col = bokeh.layouts.column(sel_row, seq_ax) 
 dwell_row = bokeh.layouts.row(leg_ax, dwell_unloop_ax, dwell_cut_ax, dwell_all_ax)
 row1 = bokeh.layouts.row(loop_freq_ax, pcut_ax)
 col1 = bokeh.layouts.column(row1, dwell_row)
@@ -454,7 +456,7 @@ lay = bokeh.layouts.column(sel_col, col1)
 # Set the theme. 
 theme_json = {'attrs':
             {'Figure': {
-                'background_fill_color': '#f5e3b3',
+                'background_fill_color': '#EFEFEF',
                 'outline_line_color': '#000000',
             },
             'Axis': {
@@ -470,9 +472,9 @@ theme_json = {'attrs':
                 'grid_line_color': None,
             },
             'Legend': {
-                'background_fill_color': '#f5e3b3',
+                'background_fill_color': '#EFEFEF',
                 'border_line_color': '#FFFFFF',
-                'border_line_width': 1.5,
+                'border_line_width': 2
             },
             'Text': {
                 'text_font_style': 'normal',
@@ -491,10 +493,5 @@ bokeh.io.curdoc().theme = theme
 
 # FOrmat legend details. 
 loop_freq_ax.legend.click_policy = 'hide'
-
-# loop_freq_ax.legend.title_text = 'click to hide'
 bokeh.io.save(lay)
 
-
-
-# %%
