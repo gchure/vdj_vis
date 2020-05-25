@@ -7,7 +7,10 @@
 								% TeX will automatically convert eps --> pdf in pdflatex		
 \usepackage{amssymb}
 \usepackage{hyperref}
-
+\hypersetup{
+	colorlinks,
+	urlcolor=blue
+}
 %SetFonts
 
 %SetFonts
@@ -39,6 +42,15 @@ DNA and cut it. We illustrate some of our findings in this interactive figure, w
 In this interactive figure, we show data from three naturally occurring binding site sequences and compare them to
 data from the initial binding site sequence and data collected on a single nucleotide change that accounts for the sequence
 difference between the initial sequence and the naturally-occurring one. Through the dropdown menu, one can select
-any of these three binding site sequences. 
+one of these three binding site sequences to reveal its sequence, with positions where the nucleotide is changed from
+the initial sequence colored in. The plot immediately below it shows the frequency that RAG creates a DNA loop with
+
+For simplicity, we also make it easier to identify how a single nucleotide change compares to the naturally occurring
+sequence of which it contributes to the sequence change. Hovering the mouse over one of the colored nucleotides will send
+the rest of the data into the background for ease of visualizing data from the single nucleotide change and the naturally
+occurring sequence.
+
+The data we present here shows that some nucleotides can have a dominating influence on how well RAG can hold or
+cut the DNA.
 
 \end{document}  
