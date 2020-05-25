@@ -6,6 +6,7 @@
 \usepackage{graphicx}				% Use pdf, png, jpg, or eps§ with pdflatex; use eps in DVI mode
 								% TeX will automatically convert eps --> pdf in pdflatex		
 \usepackage{amssymb}
+\usepackage{hyperref}
 
 %SetFonts
 
@@ -20,14 +21,24 @@
 Arguably one of the most fascinating feats of the immune system in humans, and really in any jawed vertebrate, is not only
 its ability to produce a seemingly endless array of antibody types to identify any invasive bacterium or virus-infected cell,
 but also the elegance of making antibody assembly a matter of cutting and pasting different regions of DNA together. This
-assembly called V(D)J recombination keeps the genome from having an unwieldy number of antibody genes and is one of
-the clever ways in which immune cells efficiently call upon the desired combination of antibody components to correctly
-identify the foreign substance. The initial cutting part of V(D)J recombination involves the recombination-activating gene (RAG)
-enzyme bringing together two short, recognizable DNA sequences called recombination signal sequences (RSSs) adjacent 
-to two of these gene segments before cleaving the DNA between them. A broad area of interest in the field is what factors
-are responsible for cells producing some antibody types more often than others. Using an experimental method that allows for
-detection of the formation, lifetime, and cutting of this RAG-RSS complex, we examined how RSS sequence, which despite
-some key characteristics can differ by a few base pairs from one another, contributes to the chances of the neighboring gene
-segment being selected for recombination.
+assembly called V(D)J recombination involves taking DNA sequences encoding parts of these antibodies and stitching them
+together and has proven to be one of the clever ways in which organisms keep the genome from taking on an unwieldy 
+number of antibody genes while producing the necessary antibody on demand. The initial cutting part of V(D)J recombination 
+involves the recombination-activating gene (RAG) protein, as anthropomorphized into hands in the figure, creating a loop 
+in the DNA by grabbing onto two regions of the DNA, shown with purple and blue backbones, adjacent to these 
+antibody-encoding segments so that they may be later joined. These two regions exhibit a series of sequence patterns 
+that is amenable to RAG binding. RAG will eventually cut the DNA between these sites and the antibody-encoding portions
+for other proteins to join the antibody gene segments to yield an antibody combination.
+
+While RAG manages to attach to and cut certain regions of the DNA because of the recognizable sequence patterns, these
+identifiable patterns are interspersed among DNA sequence positions that have less obvious patterns. In a study that was 
+recently published in \emph{Nucleic Acids Research}, we set out to understand how switching out nucleotides at one or
+multiple positions of these binding sites from a common initial sequence alters the extent to which RAG will hold the 
+DNA and cut it. We illustrate some of our findings in this interactive figure, which is modified from a page in 
+\href{https://www.rpgroup.caltech.edu/vdj_recombination}{the Supplementary website that accompanies our publication}. 
+In this interactive figure, we show data from three naturally occurring binding site sequences and compare them to
+data from the initial binding site sequence and data collected on a single nucleotide change that accounts for the sequence
+difference between the initial sequence and the naturally-occurring one. Through the dropdown menu, one can select
+any of these three binding site sequences. 
 
 \end{document}  
