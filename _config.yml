@@ -1,0 +1,9 @@
+# Site settings
+title: Comparing contributions of individual changes to their combined effects in DNA sequence 
+
+
+# Build settings
+markdown: kramdown
+exclude: ["README.md"]
+sass:
+  style: compressed
