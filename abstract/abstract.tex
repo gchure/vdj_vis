@@ -18,39 +18,40 @@
 
 \begin{document}
 
-\section*{Synthetic-endogenous RSS comparison tool}
+\section*{Comparing contributions of individual changes to their combined effects in DNA sequence}
 \author{Griffin Chure, Soichi Hirokawa}
 
-Arguably one of the most fascinating feats of the immune system in humans, and really in any jawed vertebrate, is not only
-its ability to produce a seemingly endless array of antibody types to identify any invasive bacterium or virus-infected cell,
-but also the elegance of making antibody assembly a matter of cutting and pasting different regions of DNA together. This
-assembly called V(D)J recombination involves taking DNA sequences encoding parts of these antibodies and stitching them
-together and has proven to be one of the clever ways in which organisms keep the genome from taking on an unwieldy 
-number of antibody genes while producing the necessary antibody on demand. The initial cutting part of V(D)J recombination 
-involves the recombination-activating gene (RAG) protein, as anthropomorphized into hands in the figure, creating a loop 
-in the DNA by grabbing onto two regions of the DNA, shown with purple and blue backbones, adjacent to these 
-antibody-encoding segments so that they may be later joined. These two regions exhibit a series of sequence patterns 
-that is amenable to RAG binding. RAG will eventually cut the DNA between these sites and the antibody-encoding portions
-for other proteins to join the antibody gene segments to yield an antibody combination.
+One of the most fascinating features of the immune system in humans is not only
+its ability to produce a vast array of antibody types to identify any invasive bacterium or virus-infected cell,
+but also the elegance of making antibody assembly by cutting and joining different regions of DNA. 
+The initial cutting part of this process involves a protein called RAG, as anthropomorphized into hands in the figure, 
+grabbing onto two regions of the DNA to form a DNA loop, shown with purple and blue backbones, each adjacent to 
+antibody-encoding sequences selected for joining. RAG attaches to these two regions because they exhibit certain
+sequence patterns that are amenable for binding. RAG cuts the DNA between these sites and the 
+antibody-encoding portions before other proteins complete the DNA joining phase for cells to make antibodies.
 
-While RAG manages to attach to and cut certain regions of the DNA because of the recognizable sequence patterns, these
-identifiable patterns are interspersed among DNA sequence positions that have less obvious patterns. In a study that was 
-recently published in \emph{Nucleic Acids Research}, we set out to understand how switching out nucleotides at one or
-multiple positions of these binding sites from a common initial sequence alters the extent to which RAG will hold the 
-DNA and cut it. We illustrate some of our findings in this interactive figure, which is modified from a page in 
+While RAG binds and cuts specific regions of the DNA because of the recognizable sequence patterns, 
+these sites can still vary in sequence within the genome. In a study that we 
+recently published in \emph{Nucleic Acids Research}, we wanted to understand how replacing nucleotides at one or
+multiple positions of some binding site sequence alters the extent to which RAG will bind
+and cut the DNA. We illustrate some of our findings in this visual, which is modified from a page in 
 \href{https://www.rpgroup.caltech.edu/vdj_recombination}{the Supplementary website that accompanies our publication}. 
-In this interactive figure, we show data from three naturally occurring binding site sequences and compare them to
-data from the initial binding site sequence and data collected on a single nucleotide change that accounts for the sequence
-difference between the initial sequence and the naturally-occurring one. Through the dropdown menu, one can select
-one of these three binding site sequences to reveal its sequence, with positions where the nucleotide is changed from
-the initial sequence colored in. The plot immediately below it shows the frequency that RAG creates a DNA loop with
+In this interactive visual, we show three example comparisons between effects of several single nucleotide changes 
+and that of combining these replacements in a single sequence. Through the dropdown menu, one can select
+any of these three binding site sequences to reveal the effects of the sequence and the individual effects of its constitutive
+changes. The plot to the upper left shows the frequency that RAG creates
+a DNA loop for the combination of changes to the far right and the individual changes to the left, 
+with position along the sequence where the change was made as the x-axis. The plot on the upper right shows full posterior
+distributions of the probability that RAG cuts the DNA with the altered sequence. In the bottom row, we present three cumulative
+distribution functions to show (from left to right) how much time it takes before DNA unloops without cutting, 
+is cut, or a compilation of the two possible fates. If one wants to more easily compare one particular
+single nucleotide change against the combined changes, hovering the mouse over a colored 
+nucleotide in the sequence below the dropdown menu will send the rest of the data into the background
+and present only the individual change and the combination of changes. 
 
-For simplicity, we also make it easier to identify how a single nucleotide change compares to the naturally occurring
-sequence of which it contributes to the sequence change. Hovering the mouse over one of the colored nucleotides will send
-the rest of the data into the background for ease of visualizing data from the single nucleotide change and the naturally
-occurring sequence.
-
-The data we present here shows that some nucleotides can have a dominating influence on how well RAG can hold or
-cut the DNA.
+Some nucleotides can have a dominating influence on how well RAG binds or cuts
+the DNA. For the sequence called V8-18, the change from T to A at position six prevents
+RAG from binding these sites. Antibody-encoding DNA segments neighboring binding sites with this T-to-A change
+are rarely selected, which presents significant obstacles to making the antibody necessary for fighting off some infections.
 
 \end{document}  
