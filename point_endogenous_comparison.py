@@ -246,7 +246,7 @@ menu_dict = {m:m for m in mut_df['mutant'].unique() if m != 'V10-95'}
 menu_dict['DFL161'] = "DFL16.1-5"
 menu_dict['DFL1613'] = "DFL16.1-3"
 menu = [(v,k) for k, v in menu_dict.items() if k in ['V1-135', 'V8-18', 'V5-43']]
-sel = Dropdown(value='', label='Select Endogenous Sequence', menu=menu)
+sel = Dropdown(value='', label='Select Sequence Combination', menu=menu)
 
 # Define the figure canvas
 
@@ -292,6 +292,10 @@ leg_ax.multi_line('xs', 'ys', color='c', line_width=10, legend='mutant',
 leg_ax.legend.location = 'top_center'
 leg_ax.legend.background_fill_color = None
 leg_ax.legend.label_text_font_size = '8pt'
+
+# Include a blank axis for space to push bar_ax to right
+blank_ax = bokeh.plotting.figure(width=200, height=55, tools=[''],
+                            toolbar_location=None)
 
 # Format the sequence axis to not be colorful.
 for ax in [seq_ax, leg_ax, bar_ax]:
@@ -449,8 +453,7 @@ sel.js_on_change('value', js_cbs[0])
 
 spacer = Div(text='<br/>')
 
-sel_row = bokeh.layouts.row(sel, bar_ax)
-sel_col = bokeh.layouts.column(sel_row, seq_ax) 
+sel_col = bokeh.layouts.column(sel, seq_ax, bar_ax) 
 dwell_row = bokeh.layouts.row(leg_ax, dwell_unloop_ax, dwell_cut_ax, dwell_all_ax)
 row1 = bokeh.layouts.row(loop_freq_ax, pcut_ax)
 col1 = bokeh.layouts.column(row1, dwell_row)
