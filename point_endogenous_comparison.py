@@ -272,7 +272,7 @@ dwell_cut_ax = bokeh.plotting.figure(width=275, height=250, x_axis_type='log',
                                     y_axis_label = 'cumulative distribution', title='DNA cutting events',
                                     tools=[''])
 loop_freq_ax = bokeh.plotting.figure(width=450, height=250,
-                                    x_axis_label='reference nucleotide', 
+                                    x_axis_label='initial sequence', 
                                     y_axis_label = 'frequency of DNA loops',
                                     x_range=[0, 32], y_range=[0, 1],
                                     tools=[''], toolbar_location=None)
@@ -439,7 +439,7 @@ post_rend = pcut_ax.multi_line('xs', 'ys', source=post_blank, line_width=2, colo
 
 
 hover = HoverTool(renderers=[sequence], callback=js_cbs[1],
-tooltips=[('mutation', '@point_mutant'),
+tooltips=[('mutation', '@display_name'),
           ('number of beads', '@n_beads'),
           ('number of loops', '@n_loops'),
           ('number of cuts', '@n_cuts')])
