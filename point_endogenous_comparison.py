@@ -73,7 +73,7 @@ for key, val in endog_seqs.items():
         else:
             mut_info = {'position':i, 'base':reference[0][i], 'base_idx':nt_idx[b],
                         'point_mutant': key, 'mutant':key, 
-                        'color':'#c2c2c2', 'display_name':f'{key} sequence'}
+                        'color':'#c2c2c2', 'display_name':''}
         if mut_info['point_mutant'] == 'reference':
            mut_info['point_mutant'] = 'WT12rss'
         if mut_info['point_mutant'] == 'V10-95':
@@ -276,7 +276,7 @@ loop_freq_ax = bokeh.plotting.figure(width=450, height=250,
                                     y_axis_label = 'frequency of DNA loops',
                                     x_range=[0, 32], y_range=[0, 1],
                                     tools=[''], toolbar_location=None)
-pcut_ax = bokeh.plotting.figure(width=450, height=250, x_axis_label='probability',
+pcut_ax = bokeh.plotting.figure(width=450, height=275, x_axis_label='probability',
                                 y_axis_label='posterior probability',
                                     title = 'probability of DNA cutting',
                                     x_range=[0, 1],
@@ -453,9 +453,11 @@ sel.js_on_change('value', js_cbs[0])
 
 spacer = Div(text='<br/>')
 
-sel_col = bokeh.layouts.column(sel, seq_ax, bar_ax) 
+sel_col = bokeh.layouts.column(sel, seq_ax) 
+freq_col = bokeh.layouts.column(bar_ax, loop_freq_ax)
+cut_col = bokeh.layouts.column(spacer, pcut_ax)
 dwell_row = bokeh.layouts.row(leg_ax, dwell_unloop_ax, dwell_cut_ax, dwell_all_ax)
-row1 = bokeh.layouts.row(loop_freq_ax, pcut_ax)
+row1 = bokeh.layouts.row(freq_col, cut_col)
 col1 = bokeh.layouts.column(row1, dwell_row)
 
 
