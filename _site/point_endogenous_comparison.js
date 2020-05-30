@@ -58,17 +58,17 @@ var  leg_xs = [[-10, -9]];
 var  leg_ys = [[-10, -9]];
 
 for (var i = 0; i < colors.length; i++) {
-    leg_colors.push(colors[i]);
-    if (points[i].includes('-') || points[i].includes('WT')) {
+        if (points[i].includes('-') || points[i].includes('WT')) {
         // leg_mutant.push(points[i]);
+        var a= 1;
     }
     else {
-    // leg_mutant.push(points[i].slice(2))
+        leg_colors.push(colors[i]);
+        leg_mutant.push(legs[i])
+        leg_alphas.push(alphas[i]);
+        leg_xs.push([-10, -9])
+        leg_ys.push([-10, -9])
     }
-    leg_mutant.push(legs[i])
-    leg_alphas.push(alphas[i]);
-    leg_xs.push([-10, -9])
-    leg_ys.push([-10, -9])
 }
 leg_source.data['xs'] = leg_xs;
 leg_source.data['ys'] = leg_ys;

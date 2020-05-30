@@ -73,7 +73,7 @@ for key, val in endog_seqs.items():
         else:
             mut_info = {'position':i, 'base':reference[0][i], 'base_idx':nt_idx[b],
                         'point_mutant': key, 'mutant':key, 
-                        'color':'#c2c2c2', 'display_name':f'{key} sequence'}
+                        'color':'#c2c2c2', 'display_name':''}
         if mut_info['point_mutant'] == 'reference':
            mut_info['point_mutant'] = 'WT12rss'
         if mut_info['point_mutant'] == 'V10-95':
@@ -246,7 +246,7 @@ menu_dict = {m:m for m in mut_df['mutant'].unique() if m != 'V10-95'}
 menu_dict['DFL161'] = "DFL16.1-5"
 menu_dict['DFL1613'] = "DFL16.1-3"
 menu = [(v,k) for k, v in menu_dict.items() if k in ['V1-135', 'V8-18', 'V5-43']]
-sel = Dropdown(value='', label='Select Endogenous Sequence', menu=menu)
+sel = Dropdown(value='', label='Select Sequence Combination', menu=menu)
 
 # Define the figure canvas
 
@@ -272,11 +272,11 @@ dwell_cut_ax = bokeh.plotting.figure(width=275, height=250, x_axis_type='log',
                                     y_axis_label = 'cumulative distribution', title='DNA cutting events',
                                     tools=[''])
 loop_freq_ax = bokeh.plotting.figure(width=450, height=250,
-                                    x_axis_label='reference nucleotide', 
+                                    x_axis_label='initial sequence', 
                                     y_axis_label = 'frequency of DNA loops',
                                     x_range=[0, 32], y_range=[0, 1],
                                     tools=[''], toolbar_location=None)
-pcut_ax = bokeh.plotting.figure(width=450, height=250, x_axis_label='probability',
+pcut_ax = bokeh.plotting.figure(width=450, height=275, x_axis_label='probability',
                                 y_axis_label='posterior probability',
                                     title = 'probability of DNA cutting',
                                     x_range=[0, 1],
@@ -292,6 +292,10 @@ leg_ax.multi_line('xs', 'ys', color='c', line_width=10, legend='mutant',
 leg_ax.legend.location = 'top_center'
 leg_ax.legend.background_fill_color = None
 leg_ax.legend.label_text_font_size = '8pt'
+
+# Include a blank axis for space to push bar_ax to right
+blank_ax = bokeh.plotting.figure(width=200, height=55, tools=[''],
+                            toolbar_location=None)
 
 # Format the sequence axis to not be colorful.
 for ax in [seq_ax, leg_ax, bar_ax]:
@@ -439,7 +443,7 @@ post_rend = pcut_ax.multi_line('xs', 'ys', source=post_blank, line_width=2, colo
 
 
 hover = HoverTool(renderers=[sequence], callback=js_cbs[1],
-tooltips=[('mutation', '@point_mutant'),
+tooltips=[('mutation', '@display_name'),
           ('number of beads', '@n_beads'),
           ('number of loops', '@n_loops'),
           ('number of cuts', '@n_cuts')])
@@ -449,10 +453,11 @@ sel.js_on_change('value', js_cbs[0])
 
 spacer = Div(text='<br/>')
 
-sel_row = bokeh.layouts.row(sel, bar_ax)
-sel_col = bokeh.layouts.column(sel_row, seq_ax) 
+sel_col = bokeh.layouts.column(sel, seq_ax) 
+freq_col = bokeh.layouts.column(bar_ax, loop_freq_ax)
+cut_col = bokeh.layouts.column(spacer, pcut_ax)
 dwell_row = bokeh.layouts.row(leg_ax, dwell_unloop_ax, dwell_cut_ax, dwell_all_ax)
-row1 = bokeh.layouts.row(loop_freq_ax, pcut_ax)
+row1 = bokeh.layouts.row(freq_col, cut_col)
 col1 = bokeh.layouts.column(row1, dwell_row)
 
 

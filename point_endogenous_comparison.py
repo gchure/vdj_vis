@@ -443,10 +443,10 @@ post_rend = pcut_ax.multi_line('xs', 'ys', source=post_blank, line_width=2, colo
 
 
 hover = HoverTool(renderers=[sequence], callback=js_cbs[1],
-tooltips=[('mutation', '@display_name'),
-          ('number of beads', '@n_beads'),
-          ('number of loops', '@n_loops'),
-          ('number of cuts', '@n_cuts')])
+tooltips=[('position and nucleotide change', '@display_name'),
+          ('number of DNA strands tracked', '@n_beads'),
+          ('number of loops observed', '@n_loops'),
+          ('number of cuts observed', '@n_cuts')])
 
 seq_ax.add_tools(hover)
 sel.js_on_change('value', js_cbs[0])
