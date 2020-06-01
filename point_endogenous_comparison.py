@@ -310,7 +310,7 @@ ticks[-1] += 2
 loop_freq_ax.ray(31, 0, angle=np.pi/2,length=25, line_color='white', line_width=15, alpha=0.75)
 loop_freq_ax.xaxis.ticker = ticks
 renamed_ticks = {int(t):s for t, s in zip(ticks, list(reference[0]))}
-renamed_ticks[31] = 'endo'
+renamed_ticks[31] = 'combine\ '
 loop_freq_ax.xaxis.major_label_overrides = renamed_ticks
 
 # Add A color bar for the confidence intervals
