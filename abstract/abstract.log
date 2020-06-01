@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  28 MAY 2020 19:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  31 MAY 2020 17:49
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -308,33 +308,32 @@ LaTeX Info: Redefining \nameref on input line 19.
 \@outlinefile=\write3
 \openout3 = `abstract.out'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 58.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 70.
  [1
 
 {/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 58.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 70.
  (./abstract.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 58.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 58.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 70.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 70.
 Package rerunfilecheck Info: File `abstract.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 58.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 70.
  ) 
 Here is how much of TeX's memory you used:
- 5718 strings out of 492649
- 84254 string characters out of 6129622
+ 5716 strings out of 492649
+ 84230 string characters out of 6129622
  178996 words of memory out of 5000000
- 9578 multiletter control sequences out of 15000+600000
- 4891 words of font info for 18 fonts, out of 8000000 for 9000
+ 9577 multiletter control sequences out of 15000+600000
+ 4545 words of font info for 17 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  28i,5n,27p,216b,318s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
-></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><
-/usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on abstract.pdf (1 page, 46099 bytes).
+></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb>
+Output written on abstract.pdf (1 page, 35257 bytes).
 PDF statistics:
- 28 PDF objects out of 1000 (max. 8388607)
- 21 compressed objects within 1 object stream
+ 23 PDF objects out of 1000 (max. 8388607)
+ 17 compressed objects within 1 object stream
  3 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
